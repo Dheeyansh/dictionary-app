@@ -1,0 +1,169 @@
+:root {
+    --header-color: #008080;
+    --bcg-color: #f5f5f5;
+    --padding: 20px;
+    --text-color: #fff;
+    --border-radius: 5px;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+    background-color: var(--bcg-color);
+}
+
+header {
+    background-color: var(--header-color);
+    padding: var(--padding);
+    color: var(--text-color);
+    width: 100vw;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+main {
+    
+    min-height: 81vh;
+    padding: var(--padding);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+main form {
+    display: flex;
+    justify-content: center;
+}
+
+
+form input[type="text"],
+form button[type="submit"],
+.result div a {
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    padding: calc(var(--padding) / 2);
+}
+
+
+form input[type="text"] {
+    flex-grow: 1;
+}
+
+form button[type="submit"] {
+    background-color: var(--header-color);
+    margin-left: 10px;
+    cursor: pointer;
+}
+.result{
+    display: none;
+}
+
+footer {
+    background-color: var(--header-color);
+    color: var(--text-color);
+    padding: var(--padding);
+    font-size: 18px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+
+.result {
+    background-color: #fff;
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.result p {
+    margin-top: 10px;
+}
+
+.result p.Part {
+    font-style: italic;
+    color: #808080;
+    margin-top: 2px;
+}
+
+.result div {
+    margin-top: 20px;
+}
+
+.result div a {
+    text-decoration: none;
+    background-color: var(--header-color);
+    color: var(--text-color);
+}
+
+.result li {
+    padding: calc(var(--padding)/6);
+    margin-left: 20px;
+}
+.audio{
+ display: flex;
+ flex-direction: column;
+}
+.audio-player {
+    width: 50%;
+    height: 30px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+/* HTML: <div class="loader"></div> */
+
+.loader {
+    width: 120px;
+    height: 22px;
+    border-radius: 40px;
+    color: #514b82;
+    border: 2px solid;
+    position: relative;
+    overflow: hidden;
+    margin: 50px auto;
+    display: block;  
+  }
+  .loader::before {
+    content: "";
+    position: absolute;
+    margin: 2px;
+    width: 14px;
+    top: 0;
+    bottom: 0;
+    left: -20px;
+    border-radius: inherit;
+    background: currentColor;
+    box-shadow: -10px 0 12px 3px currentColor;
+    clip-path: polygon(0 5%, 100% 0,100% 100%,0 95%,-30px 50%);
+    animation: l14 1s infinite linear;
+  }
+  @keyframes l14 {
+    100% {left: calc(100% + 20px)}
+  }
+  
+@media screen and (max-width:320px) {
+    main form{
+        flex-direction: column;
+
+    }
+    form button [type="submit"]{
+      margin-left: 0px;
+      margin-top: 10px;  
+    }
+}
